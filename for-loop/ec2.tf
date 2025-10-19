@@ -1,11 +1,11 @@
 resource "aws_instance" "terraform" {
-  count = 10
+  for_each = var.instances
   ami           = "ami-09c813fb71547fc4f" 
-  instance_type = "t2.micro"
+  instance_type = each.value
   vpc_security_group_ids = [aws_security_group.allow_all.id]
   tags = {
-      Name = var.instances[count.index]
-      Terraform = "True"
+      Name = each.key
+      Terraform = "true"
   }
 }
 
@@ -31,4 +31,4 @@ resource "aws_security_group" "allow_all" {
 
 }
 
-# if we use count based iteration we will get list
+# if we use for-iteration we will get map 
