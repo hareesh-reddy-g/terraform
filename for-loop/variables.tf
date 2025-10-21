@@ -1,10 +1,18 @@
 variable "instances" { 
-    #default = [ "mongodb", "catalogue", "redis", "user", "cart", "mysql", "shipping", "rabbitmq", "payment", "frontend" ]
-    default = {
-        mongodb = "t2.micro"
-        redis = "t2.micro"
-        mysql = "t3.small"
-    }
+    default = [ "mongodb", "redis" ]
+    #default = {
+    #   mongodb = "t2.micro"
+    #   redis = "t2.micro"
+    #   mysql = "t3.small"
+    #}
+    #default = {
+    #    mongodb = {
+    #        "instance_type = "t2.micro"
+    #        ami = "ami-id"
+    #    }
+    #    redis = "t2.micro"
+    #    mysql = "t3.small"
+    #}
 } 
 
 variable "zone_id" {
