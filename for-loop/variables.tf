@@ -1,5 +1,5 @@
 variable "instances" { 
-    default = [ "mongodb", "redis" ]
+    default = [ "mongodb", "redis", "catalogue", "user", "cart", "mysql", "shipping", "rabbitmq", "payment" ]
     #default = {
     #   mongodb = "t2.micro"
     #   redis = "t2.micro"
